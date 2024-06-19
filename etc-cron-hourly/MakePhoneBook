@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/local/bin/mkphonebook > /tftpboot/yealink/MRPhonebook.xml
