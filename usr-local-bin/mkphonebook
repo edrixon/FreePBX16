@@ -38,3 +38,4 @@ echo ""
 
 echo "</YealinkIPPhoneDirectory>"
 
+rm -f $TMPFILE
