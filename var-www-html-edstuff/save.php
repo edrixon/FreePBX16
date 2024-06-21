@@ -25,8 +25,10 @@
         $mac=$_POST["mac"];
         $extn1=$_POST["extn1"];
         $extn2=$_POST["extn2"];
+        $phone=$_POST["phonetype"];
+        $fw=$_POST["firmware"];
 
-        $cmd="/usr/local/bin/mkphone" . " " . $mac . " " . $extn1 . " " . $extn2;
+        $cmd="/usr/local/bin/mkphone" . " " . $mac . " " . $phone . " " . $fw . " " . $extn1 . " " . $extn2;
 
         exec($cmd, $output, $result);
         if ($result ==  0) {
