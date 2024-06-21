@@ -1,11 +1,8 @@
 #!/bin/sh
 
-echo "MKPHONE!"
-whoami > /tmp/iam
-
-if [ $# -gt 3 ] || [ $# -lt 2 ]
+if [ $# -gt 5 ] || [ $# -lt 4 ]
 then
-    echo "mkphone <mac address> <line 1> [<line 2>]"
+    echo "mkphone <mac address> <phone type> <firmware> <line 1> [<line 2>]"
     exit 1
 fi
 
@@ -17,7 +14,11 @@ then
 fi
 
 outfile=/tftpboot/$mac.boot
-shift
+
+phonetype=$2
+fwver=$3
+
+shift; shift; shift
 
 echo "Generating $outfile..."
 
@@ -25,8 +26,9 @@ echo "#!version:1.0.0.1" > $outfile
 echo "" >> $outfile
 echo "##File header "#!version:1.0.0.1" can not be edited or deleted, and must be placed in the first line.##" >> $outfile
 echo "" >> $outfile
-echo "[T33G,T23G]include:config <yealink/common.cfg>" >> $outfile
-echo "[T33G,T23G]include:config <yealink/account-common.cfg>" >> $outfile
+echo "[$phonetype]include:config <yealink/$phonetype-$fwver.cfg>" >> $outfile
+echo "include:config <yealink/common.cfg>" >> $outfile
+echo "include:config <yealink/account-common.cfg>" >> $outfile
 
 line=1
 while [ $# -ge 1 ]
@@ -37,7 +39,7 @@ do
         echo "   Line $line - extension $1 invalid"
     else
         echo "   Line $line - $1"
-        echo "[T33G,T23G]include:config <yealink/$linefile>" >> $outfile 
+        echo "include:config <yealink/$linefile>" >> $outfile 
     fi
     shift
     line=$((line+1))
