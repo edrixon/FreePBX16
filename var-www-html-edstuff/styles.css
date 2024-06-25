@@ -1,0 +1,78 @@
+.all {
+  font-family: Arial, Serif;
+  width: 100%;
+}
+
+.header {
+  text-align: Center;
+  font-size: 120%;
+  font-style: Italic;
+  padding: 10px 10px 10px 10px;
+  background-color: Grey;
+}
+
+.button {
+  text-align: center;
+  background-color: Grey;
+  color: White;
+  width: 15%;
+  display: inline-block;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  float: left;
+}
+
+.button-submit {
+  position: absolute;
+  left: 42%;
+}
+
+.button-group {
+  background-color: LightGrey;
+  color:Black;
+  padding: 8px 20px;
+}
+
+.button-group button:not(:last-child) {
+/*  border-right: none; */ /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.button-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button-group button:hover {
+  background-color: Green;
+}
+
+.footer {
+  text-align: Right;
+  font-size: 60%;
+  padding: 5px 5px 5px 5px;
+  background-color: Grey;
+}
+
+.main {
+  text-align: Center;
+  background-color: LightGrey;
+  height: 300px;
+}
+
+label {
+  display: inline-block;
+  text-align: left;
+  float: left;
+  margin-left: 30%;
+}
+
+input {
+  text-align: left;
+  float: right;
+  width: 25%;
+  margin-right: 30%;
+}
+
