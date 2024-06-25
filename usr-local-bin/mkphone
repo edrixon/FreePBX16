@@ -13,6 +13,9 @@ then
     exit 1
 fi
 
+# convert to lower case
+mac=${mac,,}
+
 outfile=/tftpboot/$mac.boot
 
 phonetype=$2
