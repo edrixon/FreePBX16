@@ -16,6 +16,8 @@
   <div class="header"><h2>Yealink phone configuration</h2></div>
   <hr>
 
+  <?php include('buttons.php'); ?> 
+
   <div class="main">
 
     <br>
@@ -41,17 +43,15 @@
 
     ?>
 
-    <form action="phoneconfig.html">
-      <input class="button" type="submit" value="OK">
+    <form action="phoneconfig.php">
+      <input class="button button-submit" type="submit" value="OK">
     </form>
 
     <br>
 
   </div>
 
-  <hr>
-  <div class="footer">Ed Rixon, June 2024</div>
-  <hr>
+  <?php include('footer.php'); ?>
 
 </div>
 
